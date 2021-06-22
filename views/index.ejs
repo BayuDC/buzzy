@@ -1,1 +1,26 @@
-<h1>Hello World</h1>
+<%- include('layouts/header') %>
+<div class="main">
+    <div class="input-group">
+        <p>Paste Soundcloud track url below here</p>
+        <div class="input-field">
+            <input type="text" name="url" id="url" placeholder="https://soundcloud.com/..." autocomplete="off">
+            <button class="btn">Go</button>
+        </div>
+    </div>
+    <div class="music">
+        <div class="img">
+            <img src="https://i1.sndcdn.com/artworks-BNnP9kl1313yNEEi-wK0oMQ-t300x300.jpg" alt="">
+        </div>
+        <div class="info">
+            <div class="genre">#Genre</div>
+            <div class="title">Some Music Title</div>
+            <div class="artist">Music Artist • Music Album</div>
+            <div class="year">2014</div>
+        </div>
+    </div>
+    <div class="download">
+        <a href="" class="btn">
+            Download
+        </a>
+    </div>
+</div>

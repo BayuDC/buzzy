@@ -1,4 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+@import 'abstracts/variable';
+@import 'abstracts/mixin';
+
+@import 'base/reset';
+
+@import 'components/button';
+@import 'components/input';
+
+@import 'layouts/header';
+@import 'layouts/main';

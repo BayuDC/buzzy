@@ -1,0 +1,140 @@
+.main {
+    min-width: 280px;
+    max-width: 900px;
+    margin: auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    @include tablet() {
+        padding: 0 20px;
+    }
+    @include mobile() {
+        padding: 0 10px;
+    }
+
+    .input-group {
+        font-size: 16px;
+        padding: 40px 0;
+        p {
+            font-weight: 600;
+            font-family: $amiko;
+            text-align: center;
+            padding-bottom: 10px;
+            color: $black-alpha;
+        }
+        .input-field {
+            display: flex;
+            width: 100%;
+            input {
+                width: 100%;
+            }
+        }
+    }
+    .music {
+        background: $blue-gamma;
+        display: flex;
+
+        @include mobile {
+            padding-top: 20px;
+            flex-direction: column;
+        }
+
+        .img {
+            line-height: 0;
+            text-align: center;
+            img {
+                width: 300px;
+                height: 300px;
+
+                @include tablet() {
+                    width: 250px;
+                    height: 250px;
+                }
+                @include mobile() {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+        .info {
+            & {
+                padding: 20px;
+                width: 100%;
+                color: $black-beta;
+                display: grid;
+                grid-template-rows: auto 1fr 1fr auto;
+
+                .title,
+                .artist {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .title {
+                    font-weight: 700;
+                    font-size: 28px;
+                    color: $black-alpha;
+                    align-self: end;
+                }
+                .artist {
+                    font-weight: 600;
+                    font-size: 20px;
+                }
+                .year {
+                    font-weight: 500;
+                    font-size: 20px;
+                    align-self: center;
+                }
+                .genre {
+                    font-weight: 700;
+                    font-size: 18px;
+                    font-family: $amiko;
+                    color: $blue-alpha;
+                    justify-self: end;
+                }
+            }
+            @include tablet() {
+                .title {
+                    font-size: 26px;
+                }
+                .artist,
+                .year {
+                    font-size: 18px;
+                }
+                .genre {
+                    font-size: 16px;
+                }
+            }
+            @include mobile() {
+                width: auto;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto 25px auto;
+                grid-template-areas: 'title title' 'artist artist' '. .' 'year genre';
+                .title {
+                    text-align: center;
+                    grid-area: title;
+                    font-size: 24px;
+                }
+                .artist {
+                    text-align: center;
+                    grid-area: artist;
+                    font-size: 16px;
+                }
+                .year {
+                    grid-area: year;
+                    font-size: 16px;
+                }
+                .genre {
+                    grid-area: genre;
+                    font-size: 16px;
+                    align-self: center;
+                }
+            }
+        }
+    }
+    .download {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
