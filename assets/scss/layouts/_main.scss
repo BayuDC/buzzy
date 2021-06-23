@@ -65,7 +65,8 @@
                 grid-template-rows: auto 1fr 1fr auto;
 
                 .title,
-                .artist {
+                .artist,
+                .genre {
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -90,7 +91,7 @@
                     font-size: 18px;
                     font-family: $amiko;
                     color: $blue-alpha;
-                    justify-self: end;
+                    text-align: right;
                 }
             }
             @include tablet() {
@@ -107,7 +108,7 @@
             }
             @include mobile() {
                 width: auto;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: auto 1fr;
                 grid-template-rows: auto auto 25px auto;
                 grid-template-areas: 'title title' 'artist artist' '. .' 'year genre';
                 .title {
