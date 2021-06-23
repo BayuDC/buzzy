@@ -141,22 +141,39 @@ input {
     text-align: center;
 }
 
-.main .music .img img {
+.main .music .img .default {
+    margin: auto;
+    background: #86a9a3;
+    font-weight: 600;
+    font-family: "Amiko", sans-serif;
+    color: #deeaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .music .img img,
+.main .music .img .default {
     width: 300px;
     height: 300px;
+    font-size: 22px;
 }
 
 @media screen and (max-width: 768px) {
-    .main .music .img img {
+    .main .music .img img,
+    .main .music .img .default {
         width: 250px;
         height: 250px;
+        font-size: 20px;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .main .music .img img {
+    .main .music .img img,
+    .main .music .img .default {
         width: 200px;
         height: 200px;
+        font-size: 16px;
     }
 }
 
