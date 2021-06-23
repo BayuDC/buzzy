@@ -7,11 +7,6 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-button {
-    border: none;
-    outline: none;
-}
-
 .btn {
     cursor: pointer;
     height: 40px;
