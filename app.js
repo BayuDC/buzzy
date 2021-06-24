@@ -37,7 +37,9 @@ app.get('/', (req, res) => {
 });
 app.post('/', async (req, res) => {
     const url = req.body.url;
-    res.json(await buzzy.info(url));
+    const music = await buzzy.info(url);
+    if (typeof music == 'string') return res.status(404).json({ msg: music });
+    res.json({ music });
 });
 app.use((req, res) => {
     res.sendStatus(404);

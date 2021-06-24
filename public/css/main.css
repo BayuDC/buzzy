@@ -102,17 +102,20 @@ input {
     }
 }
 
+.main p {
+    font-weight: 600;
+    font-family: "Amiko", sans-serif;
+    text-align: center;
+    color: #1c2c29;
+}
+
 .main .input-group {
     font-size: 16px;
     padding: 40px 0;
 }
 
 .main .input-group p {
-    font-weight: 600;
-    font-family: "Amiko", sans-serif;
-    text-align: center;
     padding-bottom: 10px;
-    color: #1c2c29;
 }
 
 .main .input-group .input-field {
@@ -122,6 +125,10 @@ input {
 
 .main .input-group .input-field input {
     width: 100%;
+}
+
+.main .status .message {
+    color: #df472d;
 }
 
 .main .music {
