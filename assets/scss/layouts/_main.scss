@@ -31,11 +31,29 @@
                 width: 100%;
             }
         }
-    }
-    .status {
-        .message {
-            color: $red;
+        .loader {
+            position: relative;
+            overflow: hidden;
+            display: none;
+            &.load {
+                display: block;
+                height: 2px;
+                div {
+                    animation: load 2s ease-in infinite;
+                }
+            }
+            div {
+                $size: 10%;
+                position: absolute;
+                background: $blue-alpha;
+                width: $size;
+                height: 2px;
+                left: -$size;
+            }
         }
+    }
+    .message {
+        color: $red;
     }
     .music {
         background: $blue-gamma;

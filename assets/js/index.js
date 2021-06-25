@@ -4,8 +4,12 @@ $('#btn-go').on('click', async () => {
     const $music = $('.music').hide();
     const $download = $('.download').hide();
     const $message = $('.message').hide();
+    const $loader = $('.loader').addClass('load');
 
-    const error = msg => $message.text(msg).show();
+    const error = msg => {
+        $message.text(msg).show();
+        $loader.removeClass('load');
+    };
     const url = $('#url').val();
 
     if (!url) return error("The url can't be empty");
@@ -37,6 +41,7 @@ $('#btn-go').on('click', async () => {
 
         $music.removeAttr('style');
         $download.removeAttr('style');
+        $loader.removeClass('load');
     } catch {
         error('Something went wrong');
     }

@@ -7,6 +7,12 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+@keyframes load {
+    50% {
+        left: 100%;
+    }
+}
+
 .btn {
     cursor: pointer;
     height: 40px;
@@ -127,7 +133,30 @@ input {
     width: 100%;
 }
 
-.main .status .message {
+.main .input-group .loader {
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.main .input-group .loader.load {
+    display: block;
+    height: 2px;
+}
+
+.main .input-group .loader.load div {
+    animation: load 2s ease-in infinite;
+}
+
+.main .input-group .loader div {
+    position: absolute;
+    background: #2d6cdf;
+    width: 10%;
+    height: 2px;
+    left: -10%;
+}
+
+.main .message {
     color: #df472d;
 }
 
