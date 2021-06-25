@@ -1,5 +1,7 @@
 import $ from 'cash-dom';
-
+$('#url').on('keyup', e => {
+    if (e.key == 'Enter') $('#btn-go').trigger('click');
+});
 $('#btn-go').on('click', async () => {
     const $music = $('.music').hide();
     const $download = $('.download').hide();
