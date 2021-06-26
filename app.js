@@ -41,6 +41,16 @@ app.post('/', async (req, res) => {
     if (typeof music == 'string') return res.status(404).json({ msg: music });
     res.json({ music });
 });
+app.get('/d/(:artist)/(:track)', async (req, res, next) => {
+    try {
+        const url = `https://soundcloud.com/${req.params.artist}/${req.params.track}`;
+        const music = await buzzy.download(url);
+
+        res.download(music.path, music.name, music.destroy);
+    } catch {
+        next();
+    }
+});
 app.use((req, res) => {
     res.sendStatus(404);
 });
