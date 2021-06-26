@@ -39,7 +39,7 @@ $('#btn-go').on('click', async () => {
         $info.find('.artist').text(`${music.artist || 'Unknown Artist'} • ${music.album || 'Unknown Album'}`);
         $info.find('.year').text(music.year);
 
-        $download.find('a').attr('href', '/');
+        $download.find('a').attr('href', music.download);
 
         $music.removeAttr('style');
         $download.removeAttr('style');
