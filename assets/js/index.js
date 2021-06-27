@@ -1,8 +1,14 @@
 import $ from 'cash-dom';
+
+let controller;
+
 $('#url').on('keyup', e => {
     if (e.key == 'Enter') $('#btn-go').trigger('click');
 });
 $('#btn-go').on('click', async () => {
+    controller?.abort();
+    controller = new AbortController();
+
     const $music = $('.music').hide();
     const $download = $('.download').hide();
     const $message = $('.message').hide();
@@ -21,6 +27,7 @@ $('#btn-go').on('click', async () => {
             method: 'post',
             body: JSON.stringify({ url }),
             headers: { 'Content-Type': 'application/json' },
+            signal: controller.signal,
         });
         const body = await res.json();
         if (!res.ok) {
@@ -53,7 +60,8 @@ $('#btn-go').on('click', async () => {
         $music.removeAttr('style');
         $download.removeAttr('style');
         $loader.removeClass('load');
-    } catch {
+    } catch (e) {
+        if (e instanceof DOMException) return;
         error('Something went wrong');
     }
 });
