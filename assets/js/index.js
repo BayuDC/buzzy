@@ -30,14 +30,23 @@ $('#btn-go').on('click', async () => {
         if (!body.music) throw body;
 
         const music = body.music;
-        const $img = $music.children().first();
+        const $img = $music.children().first().children().first();
         const $info = $music.children().last();
 
-        $img.children().first().attr('src', music.artwork);
         $info.find('.genre').text(`#${music.genre || 'NoGenre'} `);
         $info.find('.title').text(music.title);
         $info.find('.artist').text(`${music.artist || 'Unknown Artist'} • ${music.album || 'Unknown Album'}`);
         $info.find('.year').text(music.year);
+
+        $img.hide();
+        $img.next().text('No Track Artwork').removeAttr('style');
+        if (music.artwork) {
+            $img.on('load', () => {
+                $img.next().hide();
+                $img.removeAttr('style');
+            });
+            $img.attr('src', music.artwork);
+        }
 
         $download.find('a').attr('href', music.download);
 
