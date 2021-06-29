@@ -33,9 +33,12 @@ app.use(express.static('./public'));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('landing');
 });
-app.post('/', async (req, res) => {
+app.get('/app', (req, res) => {
+    res.render('app');
+});
+app.post('/app', async (req, res) => {
     const url = req.body.url;
     const music = await buzzy.info(url);
     if (typeof music == 'string') return res.status(404).json({ msg: music });

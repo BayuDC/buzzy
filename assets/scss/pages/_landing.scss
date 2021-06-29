@@ -1,0 +1,86 @@
+.landing {
+    min-width: 280px;
+    .what {
+        background: $black-alpha;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 160px 40px;
+        h1 {
+            max-width: 750px;
+            text-align: center;
+            color: white;
+            font-size: 48px;
+            line-height: 60px;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+        p {
+            max-width: 750px;
+            text-align: center;
+            color: $blue-gamma;
+            font-family: $amiko;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        @include tablet() {
+            h1 {
+                font-size: 44px;
+                line-height: 56px;
+            }
+        }
+        @include mobile() {
+            h1 {
+                font-size: 36px;
+                line-height: 42px;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 14px;
+                margin-bottom: 40px;
+                padding: 10px;
+            }
+        }
+    }
+    .why {
+        background: $blue-gamma;
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            font-size: 24px;
+        }
+        .features {
+            padding: 20px 40px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(auto, 280px));
+            gap: 80px;
+            @include dekstop() {
+                gap: 60px;
+            }
+            @include tablet() {
+                gap: 25px;
+                grid-template-columns: minmax(auto, 480px);
+            }
+            @include mobile() {
+                padding: 20px 30px;
+            }
+            .feature {
+                .title {
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: $black-alpha;
+                    margin-bottom: 10px;
+                }
+                .desc {
+                    font-family: $amiko;
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: $black-beta;
+                }
+            }
+        }
+    }
+}

@@ -23,7 +23,7 @@ $('#btn-go').on('click', async () => {
     if (!url) return error("The url can't be empty");
 
     try {
-        const res = await fetch('/', {
+        const res = await fetch('/app', {
             method: 'post',
             body: JSON.stringify({ url }),
             headers: { 'Content-Type': 'application/json' },

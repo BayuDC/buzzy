@@ -88,7 +88,7 @@ input {
     font-size: 18px;
 }
 
-.main {
+.app {
     min-width: 280px;
     max-width: 900px;
     margin: auto;
@@ -97,58 +97,58 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-    .main {
+    .app {
         padding: 0 20px;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .main {
+    .app {
         padding: 0 10px;
     }
 }
 
-.main p {
+.app p {
     font-weight: 600;
     font-family: "Amiko", sans-serif;
     text-align: center;
     color: #1c2c29;
 }
 
-.main .input-group {
+.app .input-group {
     font-size: 16px;
     padding: 40px 0;
 }
 
-.main .input-group p {
+.app .input-group p {
     padding-bottom: 10px;
 }
 
-.main .input-group .input-field {
+.app .input-group .input-field {
     display: flex;
     width: 100%;
 }
 
-.main .input-group .input-field input {
+.app .input-group .input-field input {
     width: 100%;
 }
 
-.main .input-group .loader {
+.app .input-group .loader {
     position: relative;
     overflow: hidden;
     display: none;
 }
 
-.main .input-group .loader.load {
+.app .input-group .loader.load {
     display: block;
     height: 2px;
 }
 
-.main .input-group .loader.load div {
+.app .input-group .loader.load div {
     animation: load 2s ease-in infinite;
 }
 
-.main .input-group .loader div {
+.app .input-group .loader div {
     position: absolute;
     background: #2d6cdf;
     width: 10%;
@@ -156,28 +156,28 @@ input {
     left: -10%;
 }
 
-.main .message {
+.app .message {
     color: #df472d;
 }
 
-.main .music {
+.app .music {
     background: #deeaff;
     display: flex;
 }
 
 @media screen and (max-width: 600px) {
-    .main .music {
+    .app .music {
         padding-top: 20px;
         flex-direction: column;
     }
 }
 
-.main .music .img {
+.app .music .img {
     line-height: 0;
     text-align: center;
 }
 
-.main .music .img .default {
+.app .music .img .default {
     margin: auto;
     background: #40514e;
     font-weight: 600;
@@ -188,16 +188,16 @@ input {
     justify-content: center;
 }
 
-.main .music .img img,
-.main .music .img .default {
+.app .music .img img,
+.app .music .img .default {
     width: 300px;
     height: 300px;
     font-size: 22px;
 }
 
 @media screen and (max-width: 768px) {
-    .main .music .img img,
-    .main .music .img .default {
+    .app .music .img img,
+    .app .music .img .default {
         width: 250px;
         height: 250px;
         font-size: 20px;
@@ -205,15 +205,15 @@ input {
 }
 
 @media screen and (max-width: 600px) {
-    .main .music .img img,
-    .main .music .img .default {
+    .app .music .img img,
+    .app .music .img .default {
         width: 200px;
         height: 200px;
         font-size: 16px;
     }
 }
 
-.main .music .info {
+.app .music .info {
     padding: 20px;
     width: 100%;
     color: #40514e;
@@ -221,33 +221,33 @@ input {
     grid-template-rows: auto 1fr 1fr auto;
 }
 
-.main .music .info .title,
-.main .music .info .artist,
-.main .music .info .genre {
+.app .music .info .title,
+.app .music .info .artist,
+.app .music .info .genre {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.main .music .info .title {
+.app .music .info .title {
     font-weight: 700;
     font-size: 28px;
     color: #1c2c29;
     align-self: end;
 }
 
-.main .music .info .artist {
+.app .music .info .artist {
     font-weight: 600;
     font-size: 20px;
 }
 
-.main .music .info .year {
+.app .music .info .year {
     font-weight: 500;
     font-size: 20px;
     align-self: center;
 }
 
-.main .music .info .genre {
+.app .music .info .genre {
     font-weight: 700;
     font-size: 18px;
     font-family: "Amiko", sans-serif;
@@ -256,48 +256,152 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-    .main .music .info .title {
+    .app .music .info .title {
         font-size: 26px;
     }
-    .main .music .info .artist,
-    .main .music .info .year {
+    .app .music .info .artist,
+    .app .music .info .year {
         font-size: 18px;
     }
-    .main .music .info .genre {
+    .app .music .info .genre {
         font-size: 16px;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .main .music .info {
+    .app .music .info {
         width: auto;
         grid-template-columns: auto 1fr;
         grid-template-rows: auto auto 25px auto;
         grid-template-areas: 'title title' 'artist artist' '. .' 'year genre';
     }
-    .main .music .info .title {
+    .app .music .info .title {
         text-align: center;
         grid-area: title;
         font-size: 24px;
     }
-    .main .music .info .artist {
+    .app .music .info .artist {
         text-align: center;
         grid-area: artist;
         font-size: 16px;
     }
-    .main .music .info .year {
+    .app .music .info .year {
         grid-area: year;
         font-size: 16px;
     }
-    .main .music .info .genre {
+    .app .music .info .genre {
         grid-area: genre;
         font-size: 16px;
         align-self: center;
     }
 }
 
-.main .download {
+.app .download {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+.landing {
+    min-width: 280px;
+}
+
+.landing .what {
+    background: #1c2c29;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 160px 40px;
+}
+
+.landing .what h1 {
+    max-width: 750px;
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.landing .what p {
+    max-width: 750px;
+    text-align: center;
+    color: #deeaff;
+    font-family: "Amiko", sans-serif;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .landing .what h1 {
+        font-size: 44px;
+        line-height: 56px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .landing .what h1 {
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 30px;
+    }
+    .landing .what p {
+        font-size: 14px;
+        margin-bottom: 40px;
+        padding: 10px;
+    }
+}
+
+.landing .why {
+    background: #deeaff;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing .why h1 {
+    font-size: 24px;
+}
+
+.landing .why .features {
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 280px));
+    gap: 80px;
+}
+
+@media screen and (max-width: 1200px) {
+    .landing .why .features {
+        gap: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .landing .why .features {
+        gap: 25px;
+        grid-template-columns: minmax(auto, 480px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .landing .why .features {
+        padding: 20px 30px;
+    }
+}
+
+.landing .why .features .feature .title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #1c2c29;
+    margin-bottom: 10px;
+}
+
+.landing .why .features .feature .desc {
+    font-family: "Amiko", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #40514e;
 }
