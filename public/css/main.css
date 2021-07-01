@@ -4,7 +4,13 @@
 }
 
 body {
+    min-width: 280px;
     font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 @keyframes load {
@@ -27,7 +33,6 @@ body {
 a.btn {
     display: block;
     line-height: 40px;
-    text-decoration: none;
 }
 
 input {
@@ -55,7 +60,6 @@ input {
 }
 
 .header {
-    min-width: 280px;
     background-color: #2d6cdf;
     font-weight: 700;
     color: #ffffff;
@@ -84,12 +88,11 @@ input {
     font-size: 24px;
 }
 
-.header .container .help {
+.header .container a {
     font-size: 18px;
 }
 
 .app {
-    min-width: 280px;
     max-width: 900px;
     margin: auto;
     padding: 0 30px;
@@ -302,16 +305,17 @@ input {
     margin-top: 20px;
 }
 
-.landing {
-    min-width: 280px;
+.landing .what,
+.landing .why,
+.landing .how {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .landing .what {
     background: #1c2c29;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 160px 40px;
 }
 
@@ -357,9 +361,6 @@ input {
 .landing .why {
     background: #deeaff;
     padding: 50px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .landing .why h1 {
@@ -404,4 +405,39 @@ input {
     font-weight: 600;
     font-size: 14px;
     color: #40514e;
+}
+
+.landing .how {
+    padding: 50px 0;
+}
+
+.landing .how h1 {
+    font-size: 24px;
+}
+
+.landing .how ol {
+    padding: 20px 30px;
+    display: grid;
+    gap: 25px;
+}
+
+.landing .how ol li {
+    max-width: 480px;
+}
+
+.landing .how ol li .text {
+    font-weight: 600;
+    color: #1c2c29;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.landing .how ol li .img {
+    border: solid 1px #40514e;
+    box-sizing: border-box;
+}
+
+.landing .how ol li .img img {
+    width: 100%;
+    display: block;
 }

@@ -1,11 +1,14 @@
 .landing {
-    min-width: 280px;
-    .what {
-        background: $black-alpha;
+    .what,
+    .why,
+    .how {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+    }
+    .what {
+        background: $black-alpha;
+        justify-content: center;
         padding: 160px 40px;
         h1 {
             max-width: 750px;
@@ -46,9 +49,6 @@
     .why {
         background: $blue-gamma;
         padding: 50px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         h1 {
             font-size: 24px;
         }
@@ -79,6 +79,35 @@
                     font-weight: 600;
                     font-size: 14px;
                     color: $black-beta;
+                }
+            }
+        }
+    }
+    .how {
+        padding: 50px 0;
+
+        h1 {
+            font-size: 24px;
+        }
+        ol {
+            padding: 20px 30px;
+            display: grid;
+            gap: 25px;
+            li {
+                max-width: 480px;
+                .text {
+                    font-weight: 600;
+                    color: $black-alpha;
+                    margin-bottom: 10px;
+                    line-height: 20px;
+                }
+                .img {
+                    border: solid 1px $black-beta;
+                    box-sizing: border-box;
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
                 }
             }
         }

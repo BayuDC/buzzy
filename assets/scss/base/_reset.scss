@@ -3,5 +3,10 @@
     padding: 0;
 }
 body {
+    min-width: 280px;
     font-family: $poppins;
+}
+a {
+    text-decoration: none;
+    color: $white;
 }

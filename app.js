@@ -44,6 +44,9 @@ app.post('/app', async (req, res) => {
     if (typeof music == 'string') return res.status(404).json({ msg: music });
     res.json({ music });
 });
+app.get('/guide', (req, res) => {
+    res.render('guide');
+});
 app.get('/d/(:artist)/(:track)', async (req, res, next) => {
     try {
         const url = `https://soundcloud.com/${req.params.artist}/${req.params.track}`;
