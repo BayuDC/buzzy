@@ -6,6 +6,9 @@
 body {
     min-width: 280px;
     font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -92,22 +95,38 @@ input {
     font-size: 18px;
 }
 
+.footer {
+    background: #1c2c29;
+    color: #deeaff;
+    font-family: "Amiko", sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.footer span {
+    color: #ffffff;
+}
+
+.footer a {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
 .app {
-    max-width: 900px;
-    margin: auto;
-    padding: 0 30px;
+    padding: 50px 30px;
     box-sizing: border-box;
+}
+
+.app .container {
+    margin: 0 auto;
+    max-width: 900px;
 }
 
 @media screen and (max-width: 768px) {
     .app {
-        padding: 0 20px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .app {
-        padding: 0 10px;
+        padding: 50px 20px;
     }
 }
 
@@ -120,7 +139,7 @@ input {
 
 .app .input-group {
     font-size: 16px;
-    padding: 40px 0;
+    margin-bottom: 40px;
 }
 
 .app .input-group p {
