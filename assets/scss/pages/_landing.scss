@@ -1,4 +1,8 @@
 .landing {
+    h1 {
+        font-size: 24px;
+        color: $black-alpha;
+    }
     .what,
     .why,
     .how {
@@ -49,9 +53,6 @@
     .why {
         background: $blue-gamma;
         padding: 50px 0;
-        h1 {
-            font-size: 24px;
-        }
         .features {
             padding: 20px 40px;
             display: grid;
@@ -85,10 +86,6 @@
     }
     .how {
         padding: 50px 0;
-
-        h1 {
-            font-size: 24px;
-        }
         ol {
             padding: 20px 30px;
             display: grid;

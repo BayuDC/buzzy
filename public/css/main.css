@@ -336,6 +336,11 @@ input {
     margin-top: 20px;
 }
 
+.landing h1 {
+    font-size: 24px;
+    color: #1c2c29;
+}
+
 .landing .what,
 .landing .why,
 .landing .how {
@@ -394,10 +399,6 @@ input {
     padding: 50px 0;
 }
 
-.landing .why h1 {
-    font-size: 24px;
-}
-
 .landing .why .features {
     padding: 20px 40px;
     display: grid;
@@ -440,10 +441,6 @@ input {
 
 .landing .how {
     padding: 50px 0;
-}
-
-.landing .how h1 {
-    font-size: 24px;
 }
 
 .landing .how ol {
