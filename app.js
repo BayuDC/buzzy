@@ -50,7 +50,7 @@ app.get('/d/(:artist)/(:track)', async (req, res, next) => {
     }
 });
 app.use((req, res) => {
-    res.sendStatus(404);
+    res.render('error', { layout: 'layouts/template-clear' });
 });
 
 app.listen(port, () => {

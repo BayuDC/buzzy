@@ -1,0 +1,27 @@
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: $blue-gamma;
+    color: $black-alpha;
+    h1 {
+        font-size: 120px;
+        line-height: 140px;
+    }
+    p {
+        font-family: $amiko;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    @include mobile() {
+        h1 {
+            font-size: 100px;
+            line-height: 120px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
+}

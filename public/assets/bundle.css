@@ -312,6 +312,25 @@ input {
   width: 100%;
   display: block;
 }
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #deeaff;
+  color: #1c2c29;
+}
+.error h1 {
+  font-size: 120px;
+  line-height: 140px;
+}
+.error p {
+  font-family: "Amiko", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
 @media screen and (max-width: 1200px) {
   .landing .why .features {
     gap: 60px;
@@ -400,5 +419,12 @@ input {
   }
   .landing .why .features {
     padding: 20px 30px;
+  }
+  .error h1 {
+    font-size: 100px;
+    line-height: 120px;
+  }
+  .error p {
+    font-size: 20px;
   }
 }
