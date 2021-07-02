@@ -1,5 +1,6 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const favicon = require('serve-favicon');
 const morgan = require('morgan');
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
@@ -21,6 +22,7 @@ app.use(morgan('dev'));
 app.use(expressLayouts);
 app.use(express.static('./public'));
 app.use(express.json());
+app.use(favicon('./public/favicon.ico'));
 
 app.get('/', (req, res) => {
     res.render('landing');
