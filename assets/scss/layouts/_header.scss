@@ -1,6 +1,5 @@
 .header {
     background-color: $blue-alpha;
-    font-weight: 700;
     color: $white;
     box-sizing: border-box;
 
@@ -12,7 +11,6 @@
         box-sizing: border-box;
         display: flex;
         align-items: center;
-        justify-content: space-between;
         margin: auto;
 
         @include mobile() {
@@ -21,9 +19,19 @@
 
         .brand {
             font-size: 24px;
+            font-weight: 700;
+            margin-right: auto;
         }
-        a {
-            font-size: 18px;
+        .menu {
+            font-size: 16px;
+            margin-left: 30px;
+            font-weight: 600;
+            &:hover {
+                font-weight: 700;
+            }
+            @include mobile() {
+                margin-left: 20px;
+            }
         }
     }
 }
