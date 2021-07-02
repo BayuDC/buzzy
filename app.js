@@ -1,7 +1,6 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const morgan = require('morgan');
-const sass = require('node-sass-middleware');
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackConfig = require('./webpack.config');
@@ -15,16 +14,7 @@ app.set('layout', 'layouts/template');
 
 app.use(
     webpackMiddleware(webpack(webpackConfig), {
-        publicPath: '/js',
-    })
-);
-app.use(
-    sass({
-        src: './assets/scss',
-        dest: './public/css',
-        prefix: '/css',
-        outputStyle: 'expanded',
-        indentWidth: 4,
+        publicPath: '/assets',
     })
 );
 app.use(morgan('dev'));

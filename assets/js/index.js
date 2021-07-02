@@ -1,4 +1,5 @@
 import $ from 'cash-dom';
+import '../scss/main.scss';
 
 let controller;
 
