@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 280px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@-webkit-keyframes load {
+  50% {
+    left: 100%;
+  }
+}
+
+@keyframes load {
+  50% {
+    left: 100%;
+  }
+}
+.btn {
+  cursor: pointer;
+  height: 40px;
+  padding: 0 15px;
+  background-color: #2d6cdf;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+a.btn {
+  display: block;
+  line-height: 40px;
+}
+
+input {
+  outline: none;
+  border: #25a4f5 1px solid;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 16px;
+  font-family: "Amiko", sans-serif;
+  color: #1c2c29;
+}
+
+::-moz-placeholder {
+  color: #40514e;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #40514e;
+  opacity: 1;
+}
+
+::placeholder {
+  color: #40514e;
+  opacity: 1;
+}
+
+.header {
+  background-color: #2d6cdf;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+.header .container {
+  height: 60px;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.header .container .brand {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: auto;
+}
+.header .container .menu {
+  font-size: 16px;
+  margin-left: 30px;
+  font-weight: 600;
+}
+.header .container .menu:hover {
+  font-weight: 700;
+}
+
+.footer {
+  background: #1c2c29;
+  color: #deeaff;
+  font-family: "Amiko", sans-serif;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: auto;
+}
+.footer span {
+  color: #ffffff;
+}
+.footer a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.app {
+  padding: 50px 30px;
+  box-sizing: border-box;
+}
+.app .container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+.app p {
+  font-weight: 600;
+  font-family: "Amiko", sans-serif;
+  text-align: center;
+  color: #1c2c29;
+}
+.app .input-group {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.app .input-group p {
+  padding-bottom: 10px;
+}
+.app .input-group .input-field {
+  display: flex;
+  width: 100%;
+}
+.app .input-group .input-field input {
+  width: 100%;
+}
+.app .input-group .loader {
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+.app .input-group .loader.load {
+  display: block;
+  height: 2px;
+}
+.app .input-group .loader.load div {
+  -webkit-animation: load 2s ease-in infinite;
+          animation: load 2s ease-in infinite;
+}
+.app .input-group .loader div {
+  position: absolute;
+  background: #2d6cdf;
+  width: 10%;
+  height: 2px;
+  left: -10%;
+}
+.app .message {
+  color: #df472d;
+}
+.app .music {
+  background: #deeaff;
+  display: flex;
+}
+.app .music .img {
+  line-height: 0;
+  text-align: center;
+}
+.app .music .img .default {
+  margin: auto;
+  background: #40514e;
+  font-weight: 600;
+  font-family: "Amiko", sans-serif;
+  color: #deeaff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app .music .img img,
+.app .music .img .default {
+  width: 300px;
+  height: 300px;
+  font-size: 22px;
+}
+.app .music .info {
+  padding: 20px;
+  width: 100%;
+  color: #40514e;
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+}
+.app .music .info .title,
+.app .music .info .artist,
+.app .music .info .genre {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app .music .info .title {
+  font-weight: 700;
+  font-size: 28px;
+  color: #1c2c29;
+  align-self: end;
+}
+.app .music .info .artist {
+  font-weight: 600;
+  font-size: 20px;
+}
+.app .music .info .year {
+  font-weight: 500;
+  font-size: 20px;
+  align-self: center;
+}
+.app .music .info .genre {
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Amiko", sans-serif;
+  color: #2d6cdf;
+  text-align: right;
+}
+.app .download {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.landing h1 {
+  font-size: 24px;
+  color: #1c2c29;
+}
+.landing .what,
+.landing .why,
+.landing .how {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landing .what {
+  background: #1c2c29;
+  justify-content: center;
+  padding: 160px 40px;
+}
+.landing .what h1 {
+  max-width: 750px;
+  text-align: center;
+  color: white;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+.landing .what p {
+  max-width: 750px;
+  text-align: center;
+  color: #deeaff;
+  font-family: "Amiko", sans-serif;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+.landing .why {
+  background: #deeaff;
+  padding: 50px 0;
+}
+.landing .why .features {
+  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 280px));
+  gap: 80px;
+}
+.landing .why .features .feature .title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #1c2c29;
+  margin-bottom: 10px;
+}
+.landing .why .features .feature .desc {
+  font-family: "Amiko", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #40514e;
+}
+.landing .how {
+  padding: 50px 0;
+}
+.landing .how ol {
+  padding: 20px 30px;
+  display: grid;
+  gap: 25px;
+}
+.landing .how ol li {
+  max-width: 480px;
+}
+.landing .how ol li .text {
+  font-weight: 600;
+  color: #1c2c29;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.landing .how ol li .img {
+  border: solid 1px #40514e;
+  box-sizing: border-box;
+}
+.landing .how ol li .img img {
+  width: 100%;
+  display: block;
+}
+@media screen and (max-width: 1200px) {
+  .landing .why .features {
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .app {
+    padding: 50px 20px;
+  }
+  .app .music .img img,
+.app .music .img .default {
+    width: 250px;
+    height: 250px;
+    font-size: 20px;
+  }
+  .app .music .info .title {
+    font-size: 26px;
+  }
+  .app .music .info .artist,
+.app .music .info .year {
+    font-size: 18px;
+  }
+  .app .music .info .genre {
+    font-size: 16px;
+  }
+  .landing .what h1 {
+    font-size: 44px;
+    line-height: 56px;
+  }
+  .landing .why .features {
+    gap: 25px;
+    grid-template-columns: minmax(auto, 480px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .header .container {
+    padding: 0 20px;
+  }
+  .header .container .menu {
+    margin-left: 20px;
+  }
+  .app .music {
+    padding-top: 20px;
+    flex-direction: column;
+  }
+  .app .music .img img,
+.app .music .img .default {
+    width: 200px;
+    height: 200px;
+    font-size: 16px;
+  }
+  .app .music .info {
+    width: auto;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 25px auto;
+    grid-template-areas: "title title" "artist artist" ". ." "year genre";
+  }
+  .app .music .info .title {
+    text-align: center;
+    grid-area: title;
+    font-size: 24px;
+  }
+  .app .music .info .artist {
+    text-align: center;
+    grid-area: artist;
+    font-size: 16px;
+  }
+  .app .music .info .year {
+    grid-area: year;
+    font-size: 16px;
+  }
+  .app .music .info .genre {
+    grid-area: genre;
+    font-size: 16px;
+    align-self: center;
+  }
+  .landing .what h1 {
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .landing .what p {
+    font-size: 14px;
+    margin-bottom: 40px;
+    padding: 10px;
+  }
+  .landing .why .features {
+    padding: 20px 30px;
+  }
+}
