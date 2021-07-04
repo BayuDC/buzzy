@@ -2,6 +2,7 @@ import $ from 'cash-dom';
 import '../scss/main.scss';
 
 let controller;
+let socket;
 
 $('#url').on('keyup', e => {
     if (e.key == 'Enter') $('#btn-go').trigger('click');
@@ -56,11 +57,17 @@ $('#btn-go').on('click', async () => {
             $img.attr('src', music.artwork);
         }
 
-        $download.find('a').attr('href', music.download);
-
         $music.removeAttr('style');
-        $download.removeAttr('style');
         $loader.removeClass('load');
+
+        socket?.close();
+        socket = new WebSocket(`${document.URL.replace(/http/, 'ws')}/${music.buzzyId}`);
+        socket.addEventListener('message', e => {
+            if (e.data == 'ready') {
+                $download.find('a').attr('href', `/d/${music.buzzyId}`);
+                $download.removeAttr('style');
+            }
+        });
     } catch (e) {
         if (e instanceof DOMException) return;
         error('Something went wrong');

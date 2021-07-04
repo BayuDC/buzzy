@@ -1,5 +1,6 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const expressWs = require('express-ws');
 const favicon = require('serve-favicon');
 const morgan = require('morgan');
 const webpack = require('webpack');
@@ -9,6 +10,7 @@ const buzzy = require('./lib/buzzy');
 
 const app = express();
 const port = process.env.PORT || 3000;
+expressWs(app);
 
 app.set('view engine', 'ejs');
 app.set('layout', 'layouts/template');
@@ -36,18 +38,43 @@ app.post('/app', async (req, res) => {
     if (typeof music == 'string') return res.status(404).json({ msg: music });
     res.json({ music });
 });
+app.ws('/app/(:buzzyId)', async (ws, req) => {
+    const id = req.params.buzzyId;
+    const music = buzzy.collection.get(id);
+
+    buzzy
+        .create(music.url)
+        .then(file => {
+            const destroy = () => {
+                buzzy.collection.delete(id);
+                file?.destroy();
+            };
+
+            if (ws.readyState > 1) return destroy();
+
+            music.file = file;
+            ws.send('ready');
+            ws.on('close', () => {
+                destroy();
+            });
+        })
+        .catch(() => {
+            ws.send('error');
+            ws.close();
+        });
+});
+app.get('/d/(:buzzyId)', (req, res, next) => {
+    const id = req.params.buzzyId;
+    const { file } = buzzy.collection.get(id);
+
+    if (!file) {
+        return next();
+    }
+
+    res.download(file.path, file.name);
+});
 app.get('/guide', (req, res) => {
     res.render('guide');
-});
-app.get('/d/(:artist)/(:track)', async (req, res, next) => {
-    try {
-        const url = `https://soundcloud.com/${req.params.artist}/${req.params.track}`;
-        const music = await buzzy.download(url);
-
-        res.download(music.path, music.name, music.destroy);
-    } catch {
-        next();
-    }
 });
 app.use((req, res) => {
     res.render('error', { layout: 'layouts/template-clear' });
