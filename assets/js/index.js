@@ -12,7 +12,7 @@ $('#btn-go').on('click', async () => {
     controller = new AbortController();
 
     const $music = $('.music').hide();
-    const $download = $('.download').hide();
+    const $download = $('#download').attr('class', 'hide');
     const $message = $('.message').hide();
     const $loader = $('.loader').addClass('load');
 
@@ -58,14 +58,19 @@ $('#btn-go').on('click', async () => {
         }
 
         $music.removeAttr('style');
-        $loader.removeClass('load');
+        $download.attr('class', 'load');
 
         socket?.close();
         socket = new WebSocket(`${document.URL.replace(/http/, 'ws')}/${music.buzzyId}`);
         socket.addEventListener('message', e => {
             if (e.data == 'ready') {
-                $download.find('a').attr('href', `/d/${music.buzzyId}`);
+                $loader.removeClass('load');
                 $download.removeAttr('style');
+                $download.find('a').attr('href', `/d/${music.buzzyId}`);
+                $download.attr('class', 'ready');
+            }
+            if (e.data == 'error') {
+                $download.attr('class', 'error');
             }
         });
     } catch (e) {

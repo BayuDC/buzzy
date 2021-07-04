@@ -169,6 +169,7 @@ input {
 .app .music {
   background: #deeaff;
   display: flex;
+  margin-bottom: 20px;
 }
 .app .music .img {
   line-height: 0;
@@ -226,10 +227,17 @@ input {
   color: #2d6cdf;
   text-align: right;
 }
-.app .download {
+.app #download {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  height: 40px;
+}
+.app #download.hide, .app #download.load a, .app #download.ready p {
+  display: none;
+}
+.app #download.error {
+  color: #df472d;
 }
 
 .landing h1 {

@@ -170,8 +170,18 @@
             }
         }
     }
-    .download {
+    #download {
         display: flex;
         justify-content: center;
+        align-items: center;
+        height: 40px;
+        &.hide,
+        &.load a,
+        &.ready p {
+            display: none;
+        }
+        &.error {
+            color: $red;
+        }
     }
 }
