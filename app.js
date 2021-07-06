@@ -55,7 +55,7 @@ app.ws('/app/(:buzzyId)', async (ws, req) => {
             music.file = file;
             ws.send('ready');
             ws.on('close', () => {
-                destroy();
+                setTimeout(destroy, 30000);
             });
         })
         .catch(() => {
@@ -65,11 +65,9 @@ app.ws('/app/(:buzzyId)', async (ws, req) => {
 });
 app.get('/d/(:buzzyId)', (req, res, next) => {
     const id = req.params.buzzyId;
-    const { file } = buzzy.collection.get(id);
+    const file = buzzy.collection.get(id).file;
 
-    if (!file) {
-        return next();
-    }
+    if (!file) return next();
 
     res.download(file.path, file.name);
 });
