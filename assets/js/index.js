@@ -73,6 +73,7 @@ $('#btn-go').on('click', async () => {
                 $download.attr('class', 'error');
             }
         });
+        socket.addEventListener('error', () => $download.attr('class', 'error'));
     } catch (e) {
         if (e instanceof DOMException) return;
         error('Something went wrong');
