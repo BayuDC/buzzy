@@ -1,5 +1,5 @@
 .app {
-    padding: 50px 30px;
+    padding: 50px 40px;
     box-sizing: border-box;
     .container {
         margin: 0 auto;
@@ -7,6 +7,9 @@
     }
 
     @include tablet() {
+        padding: 50px 30px;
+    }
+    @include mobile() {
         padding: 50px 20px;
     }
     p {

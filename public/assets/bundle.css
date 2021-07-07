@@ -35,12 +35,13 @@ a {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 600;
+  line-height: 16px;
   color: #ffffff;
 }
 
 a.btn {
-  display: block;
-  line-height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 input {
@@ -77,7 +78,7 @@ input {
 .header .container {
   height: 60px;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1080px;
   padding: 0 40px;
   box-sizing: border-box;
   display: flex;
@@ -104,7 +105,7 @@ input {
   font-family: "Amiko", sans-serif;
   text-align: center;
   padding: 10px;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: auto;
 }
 .footer span {
@@ -116,7 +117,7 @@ input {
 }
 
 .app {
-  padding: 50px 30px;
+  padding: 50px 40px;
   box-sizing: border-box;
 }
 .app .container {
@@ -345,8 +346,11 @@ input {
   }
 }
 @media screen and (max-width: 768px) {
+  .header .container {
+    padding: 0 30px;
+  }
   .app {
-    padding: 50px 20px;
+    padding: 50px 30px;
   }
   .app .music .img img,
 .app .music .img .default {
@@ -379,6 +383,9 @@ input {
   }
   .header .container .menu {
     margin-left: 20px;
+  }
+  .app {
+    padding: 50px 20px;
   }
   .app .music {
     padding-top: 20px;
