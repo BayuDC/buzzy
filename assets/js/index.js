@@ -8,6 +8,7 @@ $('#url').on('keyup', e => {
     if (e.key == 'Enter') $('#btn-go').trigger('click');
 });
 $('#btn-go').on('click', async () => {
+    socket?.close();
     controller?.abort();
     controller = new AbortController();
 
@@ -17,6 +18,8 @@ $('#btn-go').on('click', async () => {
     const $loader = $('.loader').addClass('load');
 
     const error = msg => {
+        $music.hide();
+        $download.attr('class', 'hide');
         $message.text(msg).show();
         $loader.removeClass('load');
     };
@@ -59,8 +62,8 @@ $('#btn-go').on('click', async () => {
 
         $music.removeAttr('style');
         $download.attr('class', 'load');
+        $message.hide();
 
-        socket?.close();
         socket = new WebSocket(`${document.URL.replace(/http/, 'ws')}/${music.buzzyId}`);
         socket.addEventListener('message', e => {
             if (e.data == 'ready') {
