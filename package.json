@@ -1,7 +1,7 @@
 {
   "name": "buzzy",
   "version": "1.0.0",
-  "description": "no desc",
+  "description": "A simple web app to download music from Soundcloud",
   "main": "app.js",
   "scripts": {
     "start": "node app",
@@ -10,7 +10,11 @@
   },
   "keywords": [],
   "author": "BayuDC",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BayuDC/buzzy.git"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "ejs": "^3.1.6",
