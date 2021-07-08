@@ -17,7 +17,7 @@ $('#btn-go').on('click', async () => {
     const $message = $('.message').hide();
     const $loader = $('.loader').addClass('load');
 
-    const error = msg => {
+    const error = (msg = 'Something went wrong') => {
         $music.hide();
         $download.attr('class', 'hide');
         $message.text(msg).show();
@@ -71,14 +71,12 @@ $('#btn-go').on('click', async () => {
                 $download.removeAttr('style');
                 $download.find('a').attr('href', `/d/${music.buzzyId}`);
                 $download.attr('class', 'ready');
-            }
-            if (e.data == 'error') {
-                $download.attr('class', 'error');
+                socket.addEventListener('close', () => error('Your file has expired'));
             }
         });
-        socket.addEventListener('error', () => $download.attr('class', 'error'));
+        socket.addEventListener('close', () => error());
     } catch (e) {
         if (e instanceof DOMException) return;
-        error('Something went wrong');
+        error();
     }
 });

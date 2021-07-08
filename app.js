@@ -59,13 +59,12 @@ app.ws('/app/(:buzzyId)', async (ws, req) => {
             });
         })
         .catch(() => {
-            ws.send('error');
             ws.close();
         });
 });
 app.get('/d/(:buzzyId)', (req, res, next) => {
     const id = req.params.buzzyId;
-    const file = buzzy.collection.get(id).file;
+    const file = buzzy.collection.get(id)?.file;
 
     if (!file) return next();
 
@@ -75,7 +74,7 @@ app.get('/guide', (req, res) => {
     res.render('guide');
 });
 app.use((req, res) => {
-    res.render('error', { layout: 'layouts/template-clear' });
+    res.status(404).render('error', { layout: 'layouts/template-clear' });
 });
 
 app.listen(port, () => {

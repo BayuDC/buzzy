@@ -237,9 +237,6 @@ input {
 .app #download.hide, .app #download.load a, .app #download.ready p {
   display: none;
 }
-.app #download.error {
-  color: #df472d;
-}
 
 .landing h1 {
   font-size: 24px;
