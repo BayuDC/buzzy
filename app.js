@@ -68,7 +68,7 @@ app.get('/d/(:buzzyId)', (req, res, next) => {
 
     if (!file) return next();
 
-    res.download(file.path, file.name);
+    res.download(file.path, file.name.replace(/[/\\?%*:|"<>]/g, '_'));
 });
 app.get('/guide', (req, res) => {
     res.render('guide');
