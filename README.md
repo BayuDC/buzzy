@@ -12,3 +12,7 @@ A simple web app to download music from Soundcloud
 ## Contributing
 
 Pull requests are welcome
+
+### Requirements
+
+-   Lame installed
