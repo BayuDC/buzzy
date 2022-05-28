@@ -1,6 +1,6 @@
 # Buzzy
 
-A simple web app to download music from Soundcloud  
+This web can download music from soundcloud.
 Demo: https://buzzyapp.herokuapp.com
 
 ![Screenshot](https://media.discordapp.net/attachments/946013429200723989/959761737748455514/unknown.png?width=1193&height=671)
@@ -10,28 +10,32 @@ Demo: https://buzzyapp.herokuapp.com
 
 ## 🔧 Development
 
-#### 📥 Clone the Project
+### 💪 Manual
 
 ```
+# Clone the project
 $ git clone https://github.com/BayuDC/buzzy.git
-```
 
-#### 🧬 Install Dependecies
+# Install Dependecies
+$ npm install
 
-```
+# Install Lame (Important)
+# https://lame.sourceforge.io/download.php
+$ apt install lame
+
+# Run
 $ npm install
 ```
 
-#### 🎶 Install Lame (Important)
+### 🐋 With Docker
 
 ```
-$ apt install lame
-```
+# Clone the project
+$ git clone https://github.com/BayuDC/buzzy.git
 
-other os: https://lame.sourceforge.io/download.php
+# Build the image
+$ docker build -t bayudc/buzzy:1.0 .
 
-#### 🚀 Run
-
-```
-$ npm run dev
+# Run
+$ docker run -p 8080:80 -d bayudc/buzzy:1.0
 ```
