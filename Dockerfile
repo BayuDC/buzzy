@@ -12,6 +12,10 @@ COPY . .
 
 RUN npm run build
 
-ENV PORT=80
+ENV PORT=80    
+
+ENV NODE_ENV production
+
+RUN npm prune --production
 
 CMD ["npm", "start"]

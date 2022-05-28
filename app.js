@@ -3,9 +3,6 @@ const expressLayouts = require('express-ejs-layouts');
 const expressWs = require('express-ws');
 const favicon = require('serve-favicon');
 const morgan = require('morgan');
-const webpack = require('webpack');
-const webpackMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('./webpack.config');
 const buzzy = require('./lib/buzzy');
 
 const app = express();
@@ -15,11 +12,10 @@ expressWs(app);
 app.set('view engine', 'ejs');
 app.set('layout', 'layouts/template');
 
-app.use(
-    webpackMiddleware(webpack(webpackConfig), {
-        publicPath: '/assets',
-    })
-);
+if (process.env.NODE_ENV !== 'production') {
+    require('./utils/dev-middleware')(app);
+}
+
 app.use(morgan('dev'));
 app.use(expressLayouts);
 app.use(express.static('./public'));
