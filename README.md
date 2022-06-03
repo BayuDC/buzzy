@@ -39,3 +39,6 @@ $ docker build -t bayudc/buzzy:1.0 .
 # Run
 $ docker run -p 8080:80 -d bayudc/buzzy:1.0
 ```
+
+## 📝 Todo
+- Implement seo
