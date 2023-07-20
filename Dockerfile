@@ -1,8 +1,8 @@
-FROM node:16
+FROM node:16-alpine
 
 WORKDIR /app
 
-RUN apt update && apt install -y lame
+RUN apk add --update lame
 
 COPY package*.json ./
 
