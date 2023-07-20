@@ -23,6 +23,9 @@ Try it now: https://buzzy.bayudc.fun
 
 Just like regular express projects.
 
+> **Note**
+> Requirements: [Node.js](https://nodejs.org) >= 16.x and [Lame](https://en.wikipedia.org/wiki/LAME) installed.
+
 ```
 $ pnpm i --shamefully-hoist
 $ pnpm run
