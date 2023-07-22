@@ -4,6 +4,7 @@ const expressWs = require('express-ws');
 const favicon = require('serve-favicon');
 const morgan = require('morgan');
 const buzzy = require('./lib/buzzy');
+const config = require('./app.config');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -23,10 +24,10 @@ app.use(express.json());
 app.use(favicon('./public/favicon.ico'));
 
 app.get('/', (req, res) => {
-    res.render('landing');
+    res.render('landing', { config });
 });
 app.get('/app', (req, res) => {
-    res.render('app');
+    res.render('app', { config });
 });
 app.post('/app', async (req, res) => {
     const url = req.body.url;
@@ -67,7 +68,7 @@ app.get('/d/(:buzzyId)', (req, res, next) => {
     res.download(file.path, file.name.replace(/[/\\?%*:|"<>]/g, '_'));
 });
 app.get('/guide', (req, res) => {
-    res.render('guide');
+    res.render('guide', { config });
 });
 app.use((req, res) => {
     res.status(404).render('error', { layout: 'layouts/template-clear' });
